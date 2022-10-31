@@ -1,0 +1,10 @@
+.git/*
+.vscode/*
+.idea/*
+*__pycache__*
+.pytest_cache/*
+reports/*
+.DS_Store
+*.log
+venv/*
+.wdm/*
