@@ -16,6 +16,7 @@ pytest-html==3.2.0
 pytest-xdist==3.0.2
 pytest==7.2.0
 webdriver-manager==3.8.4
+pytest-html-reporter==0.2.9
 ```
 
 ### Folder structure
