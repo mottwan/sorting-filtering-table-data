@@ -7,6 +7,7 @@ import logging
 import random
 from datetime import datetime
 from itertools import groupby
+from pytest_html_reporter import attach
 
 from config.conf_data import ConfData
 
@@ -25,8 +26,7 @@ def set_driver_options(driver_opts):
 
 
 def capture_screenshot(driver, name):
-    # from pytest_html_reporter import attach
-    # attach(data=driver.get_screenshot_as_png())
+    attach(data=driver.get_screenshot_as_png())
     driver.get_screenshot_as_file(os.path.join(ConfData.ROOT_DIR, ConfData.SCREENSHOTS_DIR, name))
 
 
