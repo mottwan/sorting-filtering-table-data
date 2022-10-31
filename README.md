@@ -37,8 +37,9 @@ pytest-html-reporter==0.2.9
         |_____ utils.py
     |___ resources
     |___ reports
-        |_____  html
+        |_____  html*
     |___ pyproject.toml
+    |___ pytest.ini
     |___ README.md
     |___ requirements.txt
 ```
