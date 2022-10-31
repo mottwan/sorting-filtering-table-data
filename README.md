@@ -39,6 +39,7 @@ pytest-html-reporter==0.2.9
     |___ reports
         |_____  html
     |___ pyproject.toml
+    |___ pytest.ini
     |___ README.md
     |___ requirements.txt
 ```
