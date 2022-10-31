@@ -1,14 +1,14 @@
 import logging
 
-from config.utils import custom_sort
-from config.utils import convert_str_to_float
-from config.utils import key_func
-from config.utils import generate_random_keyword
-from config.utils import generate_random_number
-from config.utils import compute_expected_number_of_table_rows
-from config.utils import list_of_strings_to_float
-from config.utils import get_number_of_rows_duplicates
-from config.utils import remove_duplicated_values
+from config.helpers import custom_sort
+from config.helpers import convert_str_to_float
+from config.helpers import key_func
+from config.helpers import generate_random_keyword
+from config.helpers import generate_random_number
+from config.helpers import compute_expected_number_of_table_rows
+from config.helpers import list_of_strings_to_float
+from config.helpers import get_number_of_rows_duplicates
+from config.helpers import remove_duplicated_values
 from tests.base_test import BaseTest
 
 

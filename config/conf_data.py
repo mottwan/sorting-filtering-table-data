@@ -15,7 +15,7 @@ def __executable_file_name(binary_file):
     return '{}.exe'.format(binary_file) if platform.system() == 'Windows' else binary_file
 
 
-class TestData:
+class ConfData:
     ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     REPORTS_DIR = os.path.join(ROOT_DIR, 'reports')
     SCREENSHOTS_DIR = os.path.join(ROOT_DIR, 'reports', 'screenshots')

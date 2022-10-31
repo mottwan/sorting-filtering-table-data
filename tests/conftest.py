@@ -13,14 +13,23 @@ LOGGER = logging.getLogger(__name__)
 myPath = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, myPath + '/../')
 
-from config.test_data import TestData
-from config.utils import (capture_screenshot,
-                          set_screenshot_name,
-                          inject_screenshot_into_html,
-                          append_extras)
+from config.conf_data import ConfData
+from config.helpers import (capture_screenshot,
+                            set_screenshot_name,
+                            inject_screenshot_into_html,
+                            append_extras)
 
 os.environ['WDM_LOG_LEVEL'] = '0'
 os.environ["WDM_LOCAL"] = '1'
+
+is_windows = False
+if sys.platform in ["win32", "win64", "x64"]:
+    is_windows = True
+python3 = True
+if sys.version_info[0] < 3:
+    python3 = False
+sys_argv = sys.argv
+pytest_plugins = ["pytester"]  # Adds the "testdir" fixture
 
 
 @pytest.fixture(params=["chrome"], scope='class')
@@ -31,8 +40,8 @@ def init_driver(request):
         driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     if request.param == "firefox":
         driver = webdriver.Firefox(service=Service(executable_path=GeckoDriverManager().install()))
-    LOGGER.info('opening url {}'.format(TestData.BASE_URL))
-    driver.get(TestData.BASE_URL)
+    LOGGER.info('opening url {}'.format(ConfData.BASE_URL))
+    driver.get(ConfData.BASE_URL)
     request.cls.driver = driver
     yield
     driver.close()
@@ -53,12 +62,12 @@ def pytest_runtest_makereport(item):
             file_name = set_screenshot_name(report)
             capture_screenshot(driver, file_name)
             if file_name:
-                html = inject_screenshot_into_html(TestData.SCREENSHOTS_FROM_REPORTS_PATH.format(file_name))
-                append_extras(extra, pytest_html.extras.url(TestData.BASE_URL), pytest_html.extras.html(html))
+                html = inject_screenshot_into_html(ConfData.SCREENSHOTS_FROM_REPORTS_PATH.format(file_name))
+                append_extras(extra, pytest_html.extras.url(ConfData.BASE_URL), pytest_html.extras.html(html))
         report.extra = extra
 
     if report.when == 'teardown':
-        LOGGER.info('Generating HTML Report in following folder {}'.format(TestData.REPORTS_DIR))
+        LOGGER.info('Generating HTML Report in following folder {}'.format(ConfData.REPORTS_DIR))
 
 
 def pytest_html_report_title(report):
