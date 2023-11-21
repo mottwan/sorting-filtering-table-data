@@ -1,5 +1,5 @@
 ## The Task
-```bash
+
 The goal of the assignment is to write a few tests for a web application which is available here: https://mystifying-beaver-ee03b5.netlify.app/. It displays a table with some fake data about cyber security attacks: name, number of cases, average impact, and complexity of the attack. Above the table, there are 2 controls: sorting selection and filtering.
 
 The task is to write a set of tests that will ensure that the combination of sorting and filtering works correctly.
@@ -10,7 +10,6 @@ Here's additional information that can help you:
 * capital letters are ignored by both filtering and sorting (it works as if all letters were small letters)
 * sorting works only in one direction: from low to high, from A to Z, sorting by complexity sorts from low to high
 * number of cases uses special formatting, thousands might be expressed as letter "k" (5000 = 5k), millions as M (1200000 = 1.2M), billions as "B" (1580000000 = 1.58B)In order to write the tests you can use any programming language and framework of your choice as long as it is possible to run your tests in UNIX-like environment.
-```
 
 ## sorting-filtering-table-data
 This project is written in Python, using Pytest and Selenium WebDriver. The **Page Object Model** pattern has been applied.
