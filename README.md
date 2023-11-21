@@ -1,4 +1,4 @@
-## The Task
+## Requirements
 
 The goal of the assignment is to write a few tests for a web application which is available here: https://mystifying-beaver-ee03b5.netlify.app/. It displays a table with some fake data about cyber security attacks: name, number of cases, average impact, and complexity of the attack. Above the table, there are 2 controls: sorting selection and filtering.
 
