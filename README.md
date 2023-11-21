@@ -1,5 +1,5 @@
 ## sorting-filtering-table-data
-This project it is written in python, pytest and selenium webdriver, It has been applied the **Page Object Model** pattern.
+This project is written in Python, using Pytest and Selenium WebDriver. The **Page Object Model** pattern has been applied.
 
 
 ### Used resources
