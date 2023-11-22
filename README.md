@@ -120,7 +120,7 @@ class SamplePage(BasePage):
 ```
 
 ## Usage Steps:
-1. git clone the project locally
+1. clone the project locally `git clone https://github.com/mottwan/sorting-filtering-table-data.git`
 2. install python on your local machine
 3. make sure at least google-chrome web browser it is installed on your local machine
 4. install virtualenv `python3 -m pip install --user virtualenv`
